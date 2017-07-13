@@ -12,5 +12,8 @@
     "react-dom": "^15.6.1",
     "react-router": "^4.1.1",
     "react-tappable": "^1.0.0"
+  },
+  "engines": {
+    "node": "4.6.2"
   }
 }
