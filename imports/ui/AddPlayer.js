@@ -20,7 +20,6 @@ export default class AddPlayer extends React.Component {
           alert("Oops seomthing went wrong: " + error.reason)
         } else {
           console.log("Player has been added");
-          console.log(Teams.find({_id: this.props.teamId}).fetch())
         }
       }));
 
