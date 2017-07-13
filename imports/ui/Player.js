@@ -32,6 +32,7 @@ export default class Player extends React.Component {
                   let player = {
                     id: this.props.player._id,
                     teamId: this.props.teamId,
+                    currentScore: this.props.player.score,
                     score: -2
                   }
                   Meteor.call('updatePlayer', player, (error => {
@@ -59,6 +60,7 @@ export default class Player extends React.Component {
                     let player = {
                       id: this.props.player._id,
                       teamId: this.props.teamId,
+                      currentScore: this.props.player.score,
                       score: -3
                     }
                     Meteor.call('updatePlayer', player, (error => {

@@ -8,6 +8,9 @@ import Reset from './Reset';
 
 
 export default class App extends React.Component {
+  constructor() {
+    super();
+  }
   render() {
     return (
       <div>
