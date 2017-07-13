@@ -19,7 +19,7 @@ export default class Reset extends React.Component {
     return (
       <div className="item reset-game">
         <form onSubmit={this.handleSubmit.bind(this)} className="form ">
-          <button className="button btn-danger">Reset Game</button>
+          <button className="btn btn-danger">Reset Game</button>
         </form>
       </div>
     );

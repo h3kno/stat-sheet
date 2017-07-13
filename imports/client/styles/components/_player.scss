@@ -19,19 +19,11 @@
 }
 
 .player__stats {
-  font-size: 1.3rem;
-  font-style: italic;
-  font-weight: 300;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .player__actions {
   display: flex;
-  justify-content: space-around;
-}
-
-@media (min-width: 400px) {
-  .player__actions {
-    display: block;
-    justify-content: space-around;
-  }
+  justify-content: space-between;
 }

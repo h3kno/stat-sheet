@@ -29,9 +29,9 @@
   @media screen and (max-width: $screen-sm) {
     border-color: #d43f3a;
     padding: 3px 6px;
-    position: relative;
-    top: -62px;
-    right: -20px;
+    position: absolute;
+    top: 0;
+    right: 0;
     background: none;
     color: $red-alt;
     border-radius: 0;
@@ -39,4 +39,9 @@
     height: 25px;
   }
 
+}
+
+.btn-points {
+  flex-grow: 1;
+  margin: 0 3px;
 }

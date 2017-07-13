@@ -13,7 +13,7 @@ export default class Player extends React.Component {
           </div>
           <div className="col-xs-12 col-md-8 player-actions">
             <div className="player__actions">
-              <Tappable className="btn btn-info"
+              <Tappable className="btn btn-info btn-points"
                 onTap={() => {
                   let player = {
                     id: this.props.player._id,
@@ -37,8 +37,10 @@ export default class Player extends React.Component {
                       alert("Oops seomthing went wrong: " + error.reason)
                     }
                   }));
-                }}>2</Tappable>
-                <Tappable className="btn btn-info"
+                }}>
+                2
+              </Tappable>
+              <Tappable className="btn btn-info btn-points"
                   onTap={() => {
                     let player = {
                       id: this.props.player._id,
@@ -62,28 +64,33 @@ export default class Player extends React.Component {
                         alert("Oops seomthing went wrong: " + error.reason)
                       }
                     }));
-                  }}>3</Tappable>
-                  <button className="btn player-delete btn-cancel" onClick={
-                    () => {
-                      if (confirm(`are you sure you want to delete player: ${this.props.player.name}?`)) {
-                        let player = {
-                          num: this.props.player.num,
-                          teamId: this.props.teamId
-                        }
-                        Meteor.call('deletePlayer', player, (error => {
-                          if (error) {
-                            alert("Oops seomthing went wrong: " + error.reason)
-                          } else {
-                            console.log('player successfully deleted');
-                          }
-                        }));
-                      }
-                    }
-                  }>X</button>
-                </div>
+                  }}>
+                  3
+                </Tappable>
               </div>
             </div>
           </div>
+          <button className="btn player-delete btn-cancel" onClick={
+            () => {
+              if (confirm(`are you sure you want to delete player: ${this.props.player.name}?`)) {
+                let player = {
+                  num: this.props.player.num,
+                  teamId: this.props.teamId
+                }
+                Meteor.call('deletePlayer', player, (error => {
+                  if (error) {
+                    alert("Oops seomthing went wrong: " + error.reason)
+                  } else {
+                    console.log('player successfully deleted');
+                  }
+                }));
+              }
+            }
+          }>
+            X
+          </button>
+        </div>
+
       )
     }
   }
