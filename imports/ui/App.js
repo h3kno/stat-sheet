@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import TitleBar from './TitleBar';
 import Teams from './Teams';
 import AddTeam from './AddTeam';
+import Reset from './Reset';
 
 
 export default class App extends React.Component {
@@ -17,6 +18,7 @@ export default class App extends React.Component {
           </div>
           <AddTeam />
         </div>
+        <Reset />
       </div>
     );
   }

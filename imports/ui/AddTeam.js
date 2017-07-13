@@ -6,12 +6,18 @@ export default class AddTeam extends React.Component {
     e.preventDefault();
     let teamCount = Teams.find().fetch().length;
     if (teamCount < 2) {
-      let teamCount = teamCount;
-      Teams.insert({
+      team = {
         team: `team${teamCount}`,
         teamScore: 0,
         players: []
-      });
+      }
+      Meteor.call('insertTeam', team, (error => {
+        if (error) {
+          alert("Oops seomthing went wrong: " + error.reason)
+        } else {
+          console.log("New team has been added");
+        }
+      }));
     } else {
       alert('Only two teams for each game');
     }

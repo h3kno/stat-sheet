@@ -3,7 +3,9 @@ import { Teams } from '../imports/api/teams';
 
 Meteor.methods({
   insertTeam(team) {
+    console.log(team);
     Teams.insert(team);
+    console.log('Team')
   },
   addPlayer(player) {
     Teams.update({_id: player.teamId}, { "$push": { "players": player }});
@@ -28,5 +30,8 @@ Meteor.methods({
       false,
       true
     );
+  },
+  resetGame() {
+    Teams.remove({});
   }
 });
