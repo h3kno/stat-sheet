@@ -1,0 +1,28 @@
+.form {
+  display: flex;
+
+  @media screen and (max-width: $screen-sm) {
+    display: block;
+    width: 100%;
+  }
+
+  .button {
+    @media screen and (max-width: $screen-sm) {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+}
+
+.form__input {
+  border: 1px solid #e8e8e8;
+  flex-grow: 1;
+  padding: 0 1.3rem 0 1.3rem;
+  @media screen and (max-width: $screen-sm) {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 0 0 10px 0;
+  }
+}

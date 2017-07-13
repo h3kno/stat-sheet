@@ -1,0 +1,28 @@
+.wrapper {
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 1.3rem;
+}
+
+.team-score h2 span {
+  border: #cccccc 1px solid;
+  display: inline-block;
+  width: 110px;
+  text-align: center;
+  padding: 10px 0;
+  @media screen and (max-width: $screen-sm) {
+    width: 100%;
+  }
+}
+
+.player-actions span {
+
+}
+
+.delete-player {
+  text-align: right;
+}
+
+.hidden {
+  display: none;
+}
