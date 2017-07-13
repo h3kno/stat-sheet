@@ -11,6 +11,7 @@ Meteor.methods({
     Teams.update({_id: player.teamId}, { "$push": { "players": player }});
   },
   updatePlayer(player) {
+    console.log('updating score and player');
     const playerId = parseFloat(player.id);
     Teams.update({
       _id: player.teamId,

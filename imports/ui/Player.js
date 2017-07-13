@@ -23,6 +23,9 @@ export default class Player extends React.Component {
                   Meteor.call('updatePlayer', player, (error => {
                     if (error) {
                       alert("Oops seomthing went wrong: " + error.reason)
+                    } else {
+                      console.log('score updated');
+                      console.log(Teams.find({_id: this.props.teamId}).fetch())
                     }
                   }));
                 }}
