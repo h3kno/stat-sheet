@@ -10,6 +10,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-flip-move": "^2.9.14",
     "react-router": "^4.1.1",
     "react-tappable": "^1.0.0"
   },

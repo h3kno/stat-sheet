@@ -25,7 +25,6 @@ export default class Player extends React.Component {
                       alert("Oops seomthing went wrong: " + error.reason)
                     } else {
                       console.log('score updated');
-                      console.log(Teams.find({_id: this.props.teamId}).fetch())
                     }
                   }));
                 }}
