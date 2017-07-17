@@ -14,9 +14,8 @@ Teams.deny({
   remove() { return false; }
 });
 
-
 if (Meteor.isServer) {
-  Meteor.publish('teams', () => {
-    return Teams.find();
+  Meteor.publish('teams', function() {
+    return Teams.find({});
   })
 }

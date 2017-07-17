@@ -5,6 +5,7 @@ import TitleBar from './TitleBar';
 import Teams from './Teams';
 import AddTeam from './AddTeam';
 import Reset from './Reset';
+import NewGame from './NewGame';
 
 
 export default class App extends React.Component {
@@ -19,6 +20,7 @@ export default class App extends React.Component {
           <div className="row">
             <Teams teams={this.props.teams} />
           </div>
+          <NewGame />
           <AddTeam />
         </div>
         <Reset />
