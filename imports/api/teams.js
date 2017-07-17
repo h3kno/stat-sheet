@@ -13,3 +13,10 @@ Teams.deny({
   update() { return false; },
   remove() { return false; }
 });
+
+
+if (Meteor.isServer) {
+  Meteor.publish('teams', () => {
+    return Teams.find();
+  })
+}

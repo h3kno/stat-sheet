@@ -7,6 +7,7 @@ export default class AddTeam extends React.Component {
     let teamCount = Teams.find().fetch().length;
     if (teamCount < 2) {
       team = {
+        team: `team${teamCount}`,
         teamScore: 0,
         players: []
       }
