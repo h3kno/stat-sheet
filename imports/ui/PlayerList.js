@@ -15,7 +15,7 @@ export default class PlayerList extends React.Component {
       )
     } else {
       return this.props.players.map((player) => {
-        return <Player teamId={this.props.teamId} key={player._id} player={player} />;
+        return <Player updateScore={this.props.updateScore} teamId={this.props.teamId} key={player._id} player={player} />;
       });
     }
   }
@@ -29,8 +29,4 @@ export default class PlayerList extends React.Component {
       </div>
     )
   }
-}
-
-PlayerList.propTypes = {
-  players: PropTypes.array.isRequired
 }

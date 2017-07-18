@@ -9,11 +9,11 @@ export default class AddPlayer extends React.Component {
     if (playerName) {
       e.target.playerName.value = '';
       let newPlayer = {
+        gameId: this.props.gameId,
         teamId: this.props.teamId,
+        isHome: this.props.teamName === 'Home',
         name: playerName,
         score: 0,
-        _id: Date.now(),
-        num: Date.now()
       }
       Meteor.call('addPlayer', newPlayer, (error => {
         if (error) {

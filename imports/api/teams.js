@@ -13,3 +13,10 @@ Teams.deny({
   update() { return false; },
   remove() { return false; }
 });
+
+if (Meteor.isServer) {
+  Meteor.publish('teams', function(gameId) {
+    let findQuery = gameId ? {'gameId': gameId} : {};
+    return Teams.find(findQuery);
+  })
+}

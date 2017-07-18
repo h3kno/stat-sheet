@@ -1,15 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Meteor} from 'meteor/meteor';
-import {Tracker} from 'meteor/tracker';
+import { Meteor } from 'meteor/meteor';
 
-import {Teams} from '../imports/api/teams';
-import App from '../imports/ui/App';
+import { routes } from '../imports/routes/routes';
 
 Meteor.startup(() => {
-  Tracker.autorun(() => {
-    let teams = Teams.find().fetch();
-    let title = 'Stat Tracker';
-    ReactDOM.render(<App title={title} teams={teams} />, document.getElementById('app'));
-  });
+  ReactDOM.render(routes, document.getElementById('app'));
 });

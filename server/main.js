@@ -1,8 +1,10 @@
-import {Meteor} from 'meteor/meteor';
-import {Teams} from '../imports/api/teams';
+import { Meteor } from 'meteor/meteor';
+
+import '../imports/api/games';
+import '../imports/api/teams';
+import '../imports/api/homeplayers';
+import '../imports/api/awayplayers';
 
 Meteor.startup(() => {
-  Meteor.publish('teams', function() {
-    return Teams.find({});
-  })
+
 });
