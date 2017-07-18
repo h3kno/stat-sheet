@@ -15,7 +15,8 @@ Teams.deny({
 });
 
 if (Meteor.isServer) {
-  Meteor.publish('teams', function() {
-    return Teams.find({});
+  Meteor.publish('teams', function(gameId) {
+    let findQuery = gameId ? {'gameId': gameId} : {};
+    return Teams.find(findQuery);
   })
 }
