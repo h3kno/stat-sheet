@@ -62,7 +62,7 @@ export default class Games extends Component {
 
   render() {
     const props = this.props;
-    const gameLink = `${props._id}`;
+    const gameLink = `/games/${props._id}`;
     if (this.state.teams) {
       return(
         <div>
