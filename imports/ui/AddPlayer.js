@@ -1,6 +1,6 @@
 import React from 'react';
+import { Meteor } from 'meteor/meteor'
 import {Teams} from '../api/teams';
-import Mongo from 'meteor/mongo';
 
 export default class AddPlayer extends React.Component {
   handleSubmit(e) {
@@ -22,7 +22,6 @@ export default class AddPlayer extends React.Component {
           console.log("Player has been added");
         }
       }));
-
     }
   }
 

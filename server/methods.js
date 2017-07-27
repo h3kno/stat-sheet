@@ -31,11 +31,9 @@ Meteor.methods({
   },
 
   addPlayer(player) {
-    if (player.isHome) {
-      HomePlayers.insert(player);
-    } else {
-      AwayPlayers.insert(player);
-    }
+    const PlayerColl = player.isHome ? HomePlayers : AwayPlayers;
+    PlayerColl.insert(player);
+    console.log('addPlayer Method', PlayerColl.find().fetch());
   },
 
   updatePlayer(player) {
@@ -54,10 +52,12 @@ Meteor.methods({
         score: incAmount
       }
     });
+
     Teams.update(
       {_id: player.teamId},
       {$inc: {teamScore: incAmount}}
     )
+
   },
 
   deletePlayer(player) {

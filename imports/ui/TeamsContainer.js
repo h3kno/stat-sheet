@@ -1,10 +1,10 @@
 import React from 'react';
-import TeamList from './TeamList';
+import Team from './Team';
 
 export default class TeamsContainer extends React.Component {
   renderTeams() {
     return this.props.teams.map((team) => {
-      return <TeamList key={team._id + team.name} team={team} gameId={this.props.gameId}/>;
+      return <Team key={team._id + team.name} gameId={this.props.gameId} team={team} />
     });
   }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Teams} from '../api/teams';
 import Mongo from 'meteor/mongo';
+import { Meteor } from 'meteor/meteor';
 
 export default class Reset extends React.Component {
   handleSubmit(e) {

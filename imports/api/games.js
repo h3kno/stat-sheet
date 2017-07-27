@@ -15,16 +15,17 @@ Games.deny({
   remove() { return false; }
 });
 
-
-// if (Meteor.isServer) {
-//   Meteor.publish('teams', () => {
-//     return Teams.find();
-//   })
-// }
-
 if (Meteor.isServer) {
   Meteor.publish('games', function(gameId) {
-    let findQuery = gameId ? {'_id': gameId} : {};
+    let findQuery = gameId ? { _id: gameId } : {};
     return Games.find(findQuery);
-  })
+  });
+
+  Meteor.publish('allGames', function() {
+    return Games.find({});
+  });
+
+  Meteor.publish('allGames2', function () {
+    return Games.find({});
+  });
 }

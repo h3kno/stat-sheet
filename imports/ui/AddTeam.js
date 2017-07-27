@@ -1,4 +1,5 @@
 import React from 'react';
+import { Meteor } from 'meteor/meteor'
 import {Teams} from '../api/teams';
 
 export default class AddTeam extends React.Component {

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Tappable from 'react-tappable';
+import { Meteor } from 'meteor/meteor';
 
 export default class Player extends React.Component {
   constructor(props) {
@@ -10,12 +11,13 @@ export default class Player extends React.Component {
     }
   }
   updateScore(points) {
+    console.log('points: ' + points);
     let props = this.props;
     let player = {
       id: props.player._id,
       isHome: props.player.isHome,
       teamId: props.teamId,
-      currentScore: props.player.score,
+      currentScore: this.state.score,
       score: points
     }
     let team = {
@@ -31,10 +33,7 @@ export default class Player extends React.Component {
         let currentScore = player.currentScore;
         let totalscore = (currentScore + playerScore);
         let incAmount = totalscore < 0 ? -Math.abs(Math.abs(playerScore) + totalscore) : playerScore;
-        console.log('incAmount: ' + incAmount);
-        console.log('this.state.score: ' + this.state.score);
         let finalScore = this.state.score + incAmount;
-        console.log('statescore + incAmount: ' + finalScore)
         this.setState({
           score: finalScore
         })
@@ -73,6 +72,7 @@ export default class Player extends React.Component {
                   this.updateScore(2);
                 }}
                 onPress={() => {
+                  console.log('on press');
                   this.updateScore(-2);
                 }}>
                 2

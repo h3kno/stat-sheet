@@ -1,4 +1,5 @@
 import {Mongo} from 'meteor/mongo';
+import { Meteor } from 'meteor/meteor';
 
 export const AwayPlayers = new Mongo.Collection('awayplayer');
 
