@@ -1,13 +1,28 @@
 .title-bar {
-  background: #e35557;
-  color: #ffffff;
-
-  h1 {
-    margin: 0;
-  }
+	background: #e35557;
+	color: #ffffff;
+	margin: 0;
+	display: grid;
+	grid-template-columns: 1fr 100px;
+	align-items: center;
 }
 
-.title-bar__subtitle {
-  font-size: 1.3rem;
-  font-weight: 400;
+.title-bar button {
+	display: none;
+}
+
+.game-title-bar {
+	background: #e35557;
+	color: #ffffff;
+	font-size: 1em;
+	margin: 0;
+	display: flex;
+	justify-content: space-between;
+	padding: 4px 8px;
+	align-items: center;
+}
+
+.game-title-bar button {
+	padding: 0;
+	color: gold;
 }

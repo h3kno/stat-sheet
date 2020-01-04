@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Router, browserHistory } from 'react-router';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import App from '../ui/App';
 import Signup from '../ui/Signup';
@@ -9,12 +9,17 @@ import CurrentGame from '../ui/CurrentGame';
 import GamesContainer from '../ui/GamesContainer';
 
 export const routes = (
-  <Router history={browserHistory}>
-    <Route path="/" component={App}/>
-    <Route path="/login" component={Login}/>
-    <Route path="/signup" component={Signup}/>
-    <Route path="/games" component={GamesContainer}/>
-    <Route path="/games/:gameid" component={CurrentGame} />
-    <Router path="*" component={NotFound}/>
-  </Router>
+	<Router>
+		<Switch>
+			<Route path="/">
+				<App />
+			</Route>
+			<Route path="/games/:id">
+				<CurrentGame />
+			</Route>
+			<Route path="*">
+				<NotFound />
+			</Route>
+		</Switch>
+	</Router>
 );
