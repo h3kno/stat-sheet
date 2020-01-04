@@ -11,62 +11,63 @@ import NewGame from './NewGame';
 import GameTime from './GameTime';
 
 export default class Team extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      gameId: '',
-      gameTime: '',
-      teams: []
-    };
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+			gameId: '',
+			gameTime: '',
+			teams: []
+		};
+	}
 
-  componentDidMount() {
-    const gameId = this.props.params.gameid;
-    this.setState({
-      gameId,
-      teams: []
-    })
+	componentDidMount() {
+		const gameId = this.props.match.params.gameid;
+		this.setState({
+			gameId
+		});
 
-    this.teamsTracker = Tracker.autorun(() => {
-      Meteor.subscribe('games', gameId);
-      Meteor.subscribe('teams', gameId);
-      this.setGameId();
-      this.setTeams();
-    });
-  }
+		this.teamsTracker = Tracker.autorun(() => {
+			Meteor.subscribe('games', gameId);
+			Meteor.subscribe('teams', gameId);
+			this.setGameId();
+			this.setTeams();
+		});
+	}
 
-  componentWillUnmount() {
-    this.teamsTracker.stop();
-  }
+	componentWillUnmount() {
+		this.teamsTracker.stop();
+	}
 
-  setGameId(gameId) {
-    let currentGame = Games.find().fetch();
-    this.setState({
-      gameId,
-      gameTime: currentGame[0] && currentGame[0].timeStarted
-    })
-  }
+	setGameId(gameId) {
+		let currentGame = Games.find().fetch();
+		this.setState({
+			gameTime: currentGame[0] && currentGame[0].timeStarted
+		});
+	}
 
-  setTeams() {
-    const teams = Teams.find().fetch();
+	setTeams() {
+		const teams = Teams.find().fetch();
 
-    this.setState({
-      teams
-    });
-  }
+		this.setState({
+			teams
+		});
+	}
 
-  render() {
-    return (
-      <div>
-        <div className="wrapper container-fluid">
-          <div className="row">
-            <GameTime gameTime={this.state.gameTime}/>
-          </div>
-          <div className="row">
-            <TeamsContainer gameId={this.state.gameId} teams={this.state.teams} />
-          </div>
-        </div>
-      </div>
-    )
-  }
+	render() {
+		return (
+			<div>
+				<div className="wrapper container-fluid">
+					<div className="row">
+						<GameTime gameTime={this.state.gameTime} />
+					</div>
+					<div className="row">
+						<TeamsContainer
+							gameId={this.state.gameId}
+							teams={this.state.teams}
+						/>
+					</div>
+				</div>
+			</div>
+		);
+	}
 }

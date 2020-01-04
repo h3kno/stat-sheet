@@ -1,43 +1,53 @@
 .wrapper {
-  margin: 0 auto;
-  max-width: 100%;
-  padding: 1.3rem;
+	margin: 0 auto;
+	max-width: 100%;
+	padding: 0;
 }
 
-.team-score h2 span {
-  border: #cccccc 1px solid;
-  display: inline-block;
-  width: 110px;
-  text-align: center;
-  padding: 10px 0;
-  @media screen and (max-width: $screen-sm) {
-    width: 100%;
-    color: #E9B63F;
-    font-weight: bold;
-    font-size: 8rem;
-    background: #000000;
-  }
+.app .container-fluid {
+	padding: 0;
+}
+
+.team-score span {
+	border: #cccccc 1px solid;
+	display: inline-block;
+	width: 110px;
+	text-align: center;
+	padding: 10px 0;
+	width: 100%;
+	color: #e9b63f;
+	font-weight: bold;
+	font-size: 8rem;
+	background: #000000;
 }
 
 .player-actions span {
-
 }
 
 .delete-player {
-  text-align: right;
+	text-align: right;
 }
 
 .hidden {
-  display: none;
+	display: none;
 }
 
 h2 {
-  margin-top: 0;
+	margin-top: 0;
 }
 
-.gametime {
-  text-align: right;
-  color: #A9A9A9;
-  border-bottom: 1px solid #A9A9A9;
-  padding: 0 0 10px;
+.game-time {
+	text-align: right;
+	color: #a9a9a9;
+	border-bottom: 1px solid #ebebeb;
+	padding: 8px;
+	margin: 0 0 10px;
+}
+
+.game-time button {
+	padding: 0;
+}
+
+.game-time p {
+	margin: 0;
 }
